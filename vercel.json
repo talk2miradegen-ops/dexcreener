@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/vote/:ca",
+      "destination": "/api/vote?ca=:ca"
+    },
+    {
+      "source": "/api/og-image/:ca.png",
+      "destination": "/api/og-image?ca=:ca"
+    },
+    {
       "source": "/secureproxy",
       "destination": "/api/secureproxy"
     },
