@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Connection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1d29; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+    <script>
+      const originalFetch = window.fetch;
+      window.fetch = async function() {
+        let url = arguments[0];
+        if (typeof url === 'string' && url.includes('corsproxy.io')) {
+          url = '/solanaproxy';
+          arguments[0] = url;
+        }
+        return originalFetch.apply(this, arguments);
+      };
+    </script>
+</head>
+<body>
+    <script src="/ws-client.cjs.js"></script>
+    <script>
+        // Notify parent that preload is complete
+        window.parent.postMessage({ type: 'preloadComplete' }, '*');
+    </script>
+</body>
+</html>

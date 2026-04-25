@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/secureproxy",
+      "destination": "/api/secureproxy"
+    },
+    {
+      "source": "/solanaproxy",
+      "destination": "/api/solanaproxy"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
