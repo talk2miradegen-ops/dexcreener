@@ -9,7 +9,7 @@ module.exports = async function handler(req, res) {
     
     // Replace the default image with the dynamic API image route
     const oldImage = "/images/photo_2026-04-23_21-55-06.jpg";
-    const oldImageAbsolute = "https://dexscreener-two.vercel.app/images/photo_2026-04-23_21-55-06.jpg";
+    const oldImageAbsolute = "https://dexscreeners-activelisting.com/images/photo_2026-04-23_21-55-06.jpg";
     const newImage = `https://dexscreener-two.vercel.app/api/og-image/${ca}.png`;
     content = content.replaceAll(oldImageAbsolute, newImage).replaceAll(oldImage, newImage);
     
